@@ -45,10 +45,10 @@ GEM
       execjs
     bcrypt (3.1.13)
     bindex (0.8.1)
-    bootstrap (4.0.0)
-      autoprefixer-rails (>= 6.0.3)
-      popper_js (>= 1.12.9, < 2)
-      sass (>= 3.5.2)
+    bootstrap (4.3.1)
+      autoprefixer-rails (>= 9.1.0)
+      popper_js (>= 1.14.3, < 2)
+      sassc-rails (>= 2.0.0)
     builder (3.2.4)
     byebug (11.1.3)
     capybara (2.18.0)
@@ -70,6 +70,7 @@ GEM
     crass (1.0.6)
     erubi (1.9.0)
     execjs (2.7.0)
+    ffi (1.13.1)
     ffi (1.13.1-x64-mingw32)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
@@ -91,6 +92,8 @@ GEM
     mini_portile2 (2.4.0)
     minitest (5.14.1)
     nio4r (2.5.2)
+    nokogiri (1.10.10)
+      mini_portile2 (~> 2.4.0)
     nokogiri (1.10.10-x64-mingw32)
       mini_portile2 (~> 2.4.0)
     popper_js (1.16.0)
@@ -138,6 +141,16 @@ GEM
       sprockets (>= 2.8, < 4.0)
       sprockets-rails (>= 2.0, < 4.0)
       tilt (>= 1.1, < 3)
+    sassc (2.4.0)
+      ffi (~> 1.9)
+    sassc (2.4.0-x64-mingw32)
+      ffi (~> 1.9)
+    sassc-rails (2.1.2)
+      railties (>= 4.0.0)
+      sassc (>= 2.0)
+      sprockets (> 3.0)
+      sprockets-rails
+      tilt
     selenium-webdriver (3.142.7)
       childprocess (>= 0.5, < 4.0)
       rubyzip (>= 1.2.2)
@@ -173,11 +186,12 @@ GEM
       nokogiri (~> 1.8)
 
 PLATFORMS
+  ruby
   x64-mingw32
 
 DEPENDENCIES
   bcrypt (~> 3.1.7)
-  bootstrap (~> 4.0.0)
+  bootstrap (~> 4.3.1)
   byebug
   capybara (~> 2.13)
   coffee-rails (~> 4.2)
