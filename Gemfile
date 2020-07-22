@@ -6,7 +6,7 @@ git_source(:github) do |repo_name|
 end
 
 # Boostrap for cooler views
-gem 'bootstrap', '~> 4.0.0'
+gem 'bootstrap', '~> 4.3.1'
 
 # Required by Boostrap
 gem 'jquery-rails'
