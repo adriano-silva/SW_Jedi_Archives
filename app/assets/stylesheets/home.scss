@@ -1,0 +1,33 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.scroll_table{
+  max-height: 600px;
+  margin-bottom: 10px;
+  overflow:scroll;
+}
+
+.filter-row{
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  margin-bottom: 30px;
+  white-space:nowrap;
+}
+
+.selectText{
+  margin-right: 10px;
+  text-align: left;
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+

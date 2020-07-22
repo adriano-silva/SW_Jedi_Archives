@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+</head>
+<body class="text-center">
+<div class="container">
+  <%= image_tag 'Star_Wars_logo-1.png', class: 'mb-4', width: '450', height: '200' %>
+
+  <h1 class="h3 mb-3 font-weight-normal"><%=t('signin')%></h1>
+
+  <%= form_tag '/login', class: 'form-signin' do %>
+    <div class="form-group">
+      <%= label_tag(:username, nil, {:class => 'sr-only'}) %>
+      <%= text_field_tag(:username, nil, {:class => 'form-control', :placeholder => t('username')}) %>
+    </div>
+    <div class="form-group">
+      <%= label_tag(:password, nil, {:class => 'sr-only'}) %>
+      <%= password_field_tag(:password, nil, {:class => 'form-control', :placeholder => t('password')}) %>
+    </div>
+    <%= submit_tag t('login'), class: 'btn btn-primary btn-lg btn-block' %>
+  <% end %>
+  <%= link_to t('newAccount'), '/users/new', method: :get %>
+
+  <p class="mt-5 mb-3 text-muted"><%=t('copyright')%></p>
+</div>
+</body>
+</html>

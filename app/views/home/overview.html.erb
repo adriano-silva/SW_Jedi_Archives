@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<script>setJsonData(<%= raw get_all_types.to_json %>)</script>
+<div class="container text-center">
+  <%= image_tag 'Star_Wars_logo-1.png', class: 'mb-4', width: '450', height: '200' %>
+  <h1 class="h3 mb-3 font-weight-normal"><%= t('overview') %></h1>
+  <h5><%= t('welcome') %> <%= current_user.username %></h5>
+  </p>
+
+  <!-- Filter selectable and search bar section -->
+  <div class="filter-row">
+    <h5 class="selectText col-2"><%= t('selectType') %>:</h5>
+    <select id="filterTypes" class='form-control col-10 filter'>
+      <option></option>
+      <% types = get_types
+         types.each do |type| %>
+        <option><%= type %></option>
+      <% end %>
+    </select>
+  </div>
+  <div class="filter-row">
+    <h5 class="selectText col-2"><%= t('search') %>:</h5>
+    <input class="form-control filter col-10" id="tableSearch" type="text"
+           placeholder="<%= t('typeSth') %>">
+  </div>
+  <!-- end -->
+
+  <!-- Data table -->
+  <div class="container text-left">
+    <div class="scroll_table">
+      <table class="table table-hover" id="dataTable">
+        <thead>
+        <tr>
+          <th scope="col"><%= t('name') %></th>
+          <th scope="col"><%= t('type') %></th>
+        </tr>
+        </thead>
+        <tbody>
+        <% data = get_data_hash
+           data.each do |element| %>
+          <tr class="clickable-row" id="<%= element["id"] %>" onclick='showdetailsmodal(<%= '"' + element["type"] + '"' %>, <%= element["id"] %>)' type="<%= element["type"] %>">
+            <td><%= element["name"] || element["title"] %></td>
+            <td><%= element["type"] %></td>
+          </tr>
+        <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <!-- end -->
+
+  <p class="mt-5 mb-3 text-muted"><%= t('copyright') %></p>
+</div>
+
+<!-- Hidden modal for details displaying -->
+<div class="modal fade " id="myModal">
+  <div class="modal-dialog modal-lg modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title"></h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span></button>
+      </div>
+      <div class="modal-body" id="modalBody">
+        <table class="table table-bordered" id="modalTable">
+        </table>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- end -->
+</html>

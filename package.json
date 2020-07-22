@@ -1,0 +1,7 @@
+{
+  "name": "sw_jedi_archives",
+  "private": true,
+  "dependencies": {
+    "fuse.js": "^6.4.0"
+  }
+}
